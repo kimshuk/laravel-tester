@@ -11,31 +11,13 @@
 |
 */
 
-use App\Task;
-
-
 Route::get('/', function () {
 
-    $tasks = Task::all();
 
-//    $tasks = DB::table('tasks')->get();
-
-    return view('welcome', compact('tasks'));
 });
 
-Route::get('/tasks', function () {
+Route::get('/tasks', 'TaskController@index');
 
+Route::get('/tasks/{task}', 'TaskController@show');
 
-    $tasks = Task::all();
-
-    return view('tasks.index', compact('tasks'));
-});
-
-Route::get('/tasks/{task}', function ($id) {
-
-    $task = Task::find($id);
-
-//    $task = DB::table('tasks')->find($id);
-
-    return view('tasks.show', compact('task'));
-});
+//Route::get('/tasks/{task}', 'TaskController@show');
