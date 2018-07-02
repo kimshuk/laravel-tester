@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-
-
-});
+Route::get('/', 'PageController@index');
 
 Route::get('/tasks', 'TaskController@index');
 
