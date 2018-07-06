@@ -1,21 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
+    <title>Laravel Tester</title>
+
+    <!-- Bootstrap core CSS -->
     @if(app()->isLocal())
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @else
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    @endif
-    <title>My Application</title>
+@endif
+
+<!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="blog.css" rel="stylesheet">
 </head>
+
 <body>
 
+
 @yield('content')
+
+
+@include('partials.footer')
 
 </body>
 </html>

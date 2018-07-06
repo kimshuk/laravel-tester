@@ -8,6 +8,11 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('pages.index');
+    }
+
+    public function create()
+    {
+        return view('pages.post');
     }
 }
