@@ -1,6 +1,7 @@
 <h2 class="blog-post-title">Post</h2>
 <hr>
 <form method="POST" action="/posts">
+    @csrf
     <div class="form-group">
         <label for="title">Title</label>
         <input type="text" class="form-control" id="text" placeholder="title" name="title">
