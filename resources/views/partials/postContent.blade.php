@@ -10,6 +10,9 @@
         <label for="body">Body</label>
         <textarea class="form-control" name="body" id="body" cols="30" rows="5"></textarea>
     </div>
-
-    <button type="submit" class="btn btn-primary">Publish</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Publish</button>
+    </div>
 </form>
+
+@include('layouts.errors')

@@ -4,24 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Task;
+use App\Post;
 
 class PostController extends Controller
 {
-    public function store() {
-         // Create a new post using the request data
-        $post = new Task;
+    public function store()
+    {
 
-        $post->title = request('title');
+        $this->validate(request(), [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
 
-        $post->body = request('body');
-
-        // Save it to the database
-
-        $post->save();
+        Post::create(
+            request(['title', 'body'])
+        );
 
         // And then redirect to the homepage
 
-        return redirect('/');
+        return redirect('/posts/create');
     }
 }
