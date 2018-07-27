@@ -3,27 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Task;
+use App\Post;
 
 class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all();
+        $posts = Post::latest()->get();
 
 //    $tasks = DB::table('tasks')->get();
 
-        return view('tasks.index', compact('tasks'));
+        return view('pages.index', compact('posts'));
     }
 
-    public function show(Task $task)
+    public function show(Post $post)
     {
-//        $task = Task::find($id);
+//        $post = Post::find($id);
 
-//    $task = DB::table('tasks')->find($id);
 
-        return $task;
-
-        return view('tasks.show', compact('task'));
+        return view('tasks.show', compact('post'));
     }
 }

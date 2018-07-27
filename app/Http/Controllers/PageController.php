@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
 class PageController extends Controller
 {
     public function index()
     {
-        return view('pages.index');
+        $posts = Post::all();
+
+//    $tasks = DB::table('tasks')->get();
+
+        return view('pages.index', compact('posts'));
     }
 
     public function create()

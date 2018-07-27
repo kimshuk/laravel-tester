@@ -8,6 +8,15 @@ use App\Post;
 
 class PostController extends Controller
 {
+    public function index()
+    {
+        $posts = Post::all();
+
+//    $tasks = DB::table('tasks')->get();
+
+        return view('partials.blogContent', compact('posts'));
+    }
+
     public function store()
     {
 
