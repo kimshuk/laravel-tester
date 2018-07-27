@@ -4,6 +4,16 @@ namespace App;
 
 class Post extends Model
 {
-    //
-//    protected $fillable = ['title', 'body'];
+    public function index()
+    {
+        $posts = Post::all();
+
+//    $tasks = DB::table('tasks')->get();
+
+        return view('partials.blogContent', compact('posts'));
+    }
+
+    public function comments() {
+        return  $this->hasMany(Comment::class);
+    }
 }
