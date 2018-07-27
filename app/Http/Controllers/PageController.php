@@ -14,7 +14,7 @@ class PageController extends Controller
 
 //    $tasks = DB::table('tasks')->get();
 
-        return view('pages.index', compact('posts'));
+        return view('posts.index', compact('posts'));
     }
 
     public function create()
