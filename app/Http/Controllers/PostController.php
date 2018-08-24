@@ -33,4 +33,12 @@ class PostController extends Controller
 
         return redirect('/posts/create');
     }
+
+    public function show(Post $post)
+    {
+//        $post = Post::find($id);
+
+
+        return view('tasks.show', compact('post'));
+    }
 }

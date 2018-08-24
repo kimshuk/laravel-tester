@@ -13,9 +13,11 @@
 
 Route::get('/', 'PageController@index');
 
-Route::get('/posts/create', 'PageController@create');
+Route::get('/posts/create', 'PostController@index');
 
 Route::post('/posts', 'PostController@store');
+
+Route::post('/posts/{post}', 'PostController@show');
 
 Route::get('/tasks', 'TaskController@index');
 

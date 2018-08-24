@@ -1,6 +1,7 @@
+@foreach($posts as $post)
 <div class="blog-post">
     <h2 class="blog-post-title">
-        <a href="/tasks/{{ $post->id }}">
+        <a href="/posts/{{ $post->id }}">
             {{ $post->title }}
         </a>
     </h2>
@@ -8,3 +9,4 @@
 
     {{ $post->body }}
 </div>
+@endforeach

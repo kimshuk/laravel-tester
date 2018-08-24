@@ -8,12 +8,13 @@ class Post extends Model
     {
         $posts = Post::all();
 
-//    $tasks = DB::table('tasks')->get();
+//        $posts = DB::table('posts')->get();
 
         return view('partials.blogContent', compact('posts'));
     }
 
-    public function comments() {
-        return  $this->hasMany(Comment::class);
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
