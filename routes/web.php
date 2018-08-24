@@ -23,3 +23,5 @@ Route::get('/tasks', 'TaskController@index');
 
 Route::get('/tasks/{post}', 'TaskController@show');
 
+
+Route::post('/tasks/{post}/comments', 'CommentsController@store');
